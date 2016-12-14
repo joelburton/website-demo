@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+    <h1>Edit Project</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% bootstrap_form form %}
+
+        <button type="submit">
+            {% bootstrap_icon "star" %} Add New
+        </button>
+    </form>
+
+{% endblock %}

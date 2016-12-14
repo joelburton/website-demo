@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Projects</h1>
+
+<ul>
+    {% for project in project_list %}
+    <li>
+        <a href="{{ project.get_absolute_url }}">{{ project.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+    {% if perms.planner.add_project %}
+    <a class="btn btn-primary" href="{% url 'project_create' %}">
+        Add
+    </a>
+    {% endif %}
+
+{% endblock %}

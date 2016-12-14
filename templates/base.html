@@ -1,0 +1,37 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+
+{% block bootstrap3_extra_head %}
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+{% endblock %}
+
+{% block bootstrap3_content %}
+
+    <header class="container-fluid">
+        <form action="{% url 'watson:search' %}">
+            <input name="q"
+                   placeholder="Search ..."
+                   value="{{ request.GET.q }}">
+            <input type="submit" value="Go">
+        </form>
+
+        <b>Ubermelon</b>
+
+        | <a href="{% url "project_list" %}">Projects</a>
+    </header>
+
+    <div class="container">
+
+        {% bootstrap_messages %}
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+    <footer class="container-fluid">
+        Copyright 2016 by Ubermelon.
+    </footer>
+
+{% endblock %}

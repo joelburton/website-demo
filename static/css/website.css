@@ -1,0 +1,24 @@
+header {
+  background-color: #c32f32;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+header form {
+  float: right;
+}
+header input {
+  border: none;
+  border-radius: 10px;
+}
+header input[name="q"] {
+  padding-left: 1em;
+}
+header a {
+  color: white;
+}
+footer {
+  margin-top: 2em;
+  padding: 2em;
+  background-color: #c32f32;
+  color: white;
+}
